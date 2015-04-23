@@ -48,6 +48,10 @@ void draw() {
   
   contours = opencv.findContours();
   println("found" + contours.size() + "contours");
+  
+  if (video.available()) {
+    video.read();
+  }
   /*
   image(video, 0, 0);
   opencv.gray();
