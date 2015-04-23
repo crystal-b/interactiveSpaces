@@ -42,6 +42,14 @@ void setup() {
 
 void draw() {
   image(video, 0, 0);
+  opencv.loadImage(video);
+  opencv.gray();
+  opencv.threshold(100);
+  
+  contours = opencv.findContours();
+  println("found" + contours.size() + "contours");
+  /*
+  image(video, 0, 0);
   opencv.gray();
   opencv.threshold(1000);
   dst = opencv.getOutput();
@@ -56,6 +64,7 @@ void draw() {
   src = opencv.getSnapshot();
   image(src, 0, 0);
   image(dst, src.width, 0);
+  */
 
   noFill();
   strokeWeight(3);
