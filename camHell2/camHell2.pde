@@ -41,13 +41,16 @@ void setup() {
 }
 
 void draw() {
+  /*
   image(video, 0, 0);
   opencv.loadImage(video);
   opencv.gray();
   opencv.threshold(100);
+    */
   
   contours = opencv.findContours();
   println("found" + contours.size() + "contours");
+
   
   if (video.available()) {
     video.read();
